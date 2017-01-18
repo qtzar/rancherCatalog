@@ -2,7 +2,7 @@
   name: "DNS Made Easy"
   version: "v0.6.0-rancher1"
   description: "Rancher External DNS service powered by DNS Made Easy."
-  minimum_rancher_version: v1.2.0
+  minimum_rancher_version: v1.3.0
   questions:
     - variable: "DNSME_DOMAINID"
       label: "DNSMadeEasy Domain ID"
@@ -22,7 +22,7 @@
     - variable: "DNSME_SANDBOX"
       label: "DNSMadeEasy API Sandbox"
       description: "When set to true will use the DNSMadeEasy API sandbox as a testing environment."
-      type: "bool"
+      type: "boolean"
       default: false
       required: true
 
