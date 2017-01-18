@@ -1,0 +1,36 @@
+.catalog:
+  name: "DNS Made Easy"
+  version: "v0.6.0-rancher1"
+  description: "Rancher External DNS service powered by DNS Made Easy."
+  minimum_rancher_version: v1.2.0
+  questions:
+    - variable: "DNSME_DOMAINID"
+      label: "DNSMadeEasy Domain ID"
+      description: "6 digit number can be seen in the url in the domain in the DNSMadeEasy management console."
+      type: "string"
+      required: true
+    - variable: "DNSME_KEY"
+      label: "DNSMadeEasy API Access Key"
+      description: "API token for your DNSMadeEasy account"
+      type: "string"
+      required: true
+    - variable: "DNSME_SECRET"
+      label: "DNSMadeEasy API Access Secret Key"
+      description: "API secret key for your DNSMadeEasy account"
+      type: "string"
+      required: true
+    - variable: "DNSME_SANDBOX"
+      label: "DNSMadeEasy API Sandbox"
+      description: "When set to true will use the DNSMadeEasy API sandbox as a testing environment."
+      type: "bool"
+      default: false
+      required: true
+
+dnsme:
+  health_check:
+    port: 1000
+    interval: 15000
+    unhealthy_threshold: 2
+    request_line: GET / HTTP/1.0
+    healthy_threshold: 2
+    response_timeout: 2000

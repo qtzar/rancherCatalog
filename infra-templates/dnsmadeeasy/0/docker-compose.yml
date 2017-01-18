@@ -1,0 +1,16 @@
+dnsme:
+  image: rancher/external-dns:v0.6.0
+  command: -provider=dnsme
+  expose:
+   - 1000
+  environment:
+    DNSME_DOMAINID: ${DNSME_DOMAINID}
+    DNSME_KEY: ${DNSME_KEY}
+    DNSME_SECRET: ${DNSME_SECRET}
+    DNSME_SANDBOX: ${DNSME_SANDBOX}
+    ROOT_DOMAIN: ${ROOT_DOMAIN}
+    NAME_TEMPLATE: ${NAME_TEMPLATE}
+    TTL: ${TTL}
+  labels:
+    io.rancher.container.create_agent: "true"
+    io.rancher.container.agent.role: "external-dns"

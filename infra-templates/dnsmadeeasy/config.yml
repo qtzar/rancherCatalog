@@ -1,0 +1,7 @@
+name: DNS Made Easy
+description: |
+  Rancher External DNS for DNS Made Easy
+version: v1.0.0-rancher1
+category: External DNS
+labels:
+  io.rancher.orchestration.supported: 'cattle,mesos,swarm,kubernetes'
