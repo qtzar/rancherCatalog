@@ -4,6 +4,9 @@ dnsme:
   expose:
    - 1000
   environment:
+    ROOT_DOMAIN: ${ROOT_DOMAIN}
+    NAME_TEMPLATE: ${NAME_TEMPLATE}
+    TTL: ${TTL}
     DNSME_DOMAINID: ${DNSME_DOMAINID}
     DNSME_KEY: ${DNSME_KEY}
     DNSME_SECRET: ${DNSME_SECRET}

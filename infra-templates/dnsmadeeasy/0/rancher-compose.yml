@@ -25,6 +25,26 @@
       type: "boolean"
       default: false
       required: true
+    - variable: "ROOT_DOMAIN"
+      label: "Root Domain"
+      description: "The domain name managed by DNSMadeEasy."
+      type: "string"
+      required: true
+    - variable: "TTL"
+      label: "TTL"
+      description: "The resource record cache time to live (TTL), in seconds"
+      type: "int"
+      default: 60
+      required: false
+    - variable: "NAME_TEMPLATE"
+      label: "DNS Name Template"
+      description: |
+        Name template used to construct the subdomain part (left of the root domain name) of the DNS record names.
+        Supported placeholders: %{{service_name}}, %{{stack_name}}, %{{environment_name}}.
+        By default DNS entries will be named '<service>.<stack>.<environment>.<domain>'.
+      type: "string"
+      default: "%{{service_name}}.%{{stack_name}}.%{{environment_name}}"
+      required: false
 
 dnsme:
   health_check:
